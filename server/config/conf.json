@@ -1,0 +1,24 @@
+{
+    "application" : "Tribation",
+    "port": 8000,
+    "env": "development",
+    "instance": "Server_PC",
+    "parallelProcessing": 5,
+    "domain": "",    
+    "db_adapter": "mysql",
+    "cookie": {
+        "secure": false
+    },
+    "session": {
+        "key": "mySuperPuperKey",
+        "cookieDomain": ".tribation.com"
+    },
+	"assets": {
+        "imageAssetsKeyPrefix": "Images",
+        "userAssetsKeyPrefix": "UserAssets"
+    },
+    "api": {
+        "version": "v1",
+        "secure": true
+    }
+}

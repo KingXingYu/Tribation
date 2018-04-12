@@ -1,0 +1,29 @@
+html.no-js(lang="")
+	head
+		title #{title}
+		meta(charset="utf-8")
+		meta(viewport="device-width" init-scale="1.0")
+
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+				
+	body(ng-app="tbApp")
+		h1 I love you angular!
+		#page-wrapper(ng-view ng-cloak class="ngviewLoading")
+
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+	script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+		
+	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js")
+	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js")
+	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js")
+	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.min.js")
+	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js")
+	script(src="/plugins/angular-socket-io/socket.min.js")
+	script(src="/plugins/angular-bootstrap/ui-bootstrap.min.js")
+	script(src="/plugins/angular-bootstrap/ui-bootstrap-tpls.min.js")
+	script(src="/plugins/angular-moment/angular-moment.min.js")
+	script(src="/plugins/angular-treeview/angular-tree-control.js")
+	script(src="/plugins/ng-table/dist/ng-table.js")
+
+	script(src="/app/app.js")
+	script(src="/app/controllers/mainfeed.js")
