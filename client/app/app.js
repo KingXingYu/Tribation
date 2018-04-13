@@ -44,12 +44,12 @@ angular.module('tbApp', dependencies)
     .hashPrefix('!');
   $routeProvider.
     when('/', {
-      templateUrl: 'app/views/main-feed.html',
-      controller: 'mainFeedController'
+      templateUrl: 'app/views/login.html',
+      controller: 'loginController'
     }).    
-    when('/lectures',{
-      templateUrl:'app/views/lectures.html',
-      controller:'lecturesController'
+    when('/signup',{
+      templateUrl:'app/views/signup.html',
+      controller:'signupController'
     }).
     when('/products/:type_id?', {
       templateUrl: 'app/views/products.html'
@@ -76,21 +76,4 @@ angular.module('tbApp', dependencies)
 
 .run(function ($rootScope) {
 	
-});
-
-/* */
-jQuery(document).ready(function(){
-  var myVar = setInterval(myTimer, 1000);
-
-  function myTimer() {
-    $('span, h4, h6, p').each(function(){
-      var html = $(this).html();
-      if(html.search(/김일성/i) > -1) {
-        if(html.search(/<strong>김일성<\/strong>/i) == -1) {
-          html = html.replace(/김일성/i, "<strong>김일성</strong>");
-          $(this).html(html);
-        }
-      }
-    });
-  }
 });

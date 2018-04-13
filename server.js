@@ -111,6 +111,11 @@ app.use(function (err, req, res, next) {
     res.send(new utils.serverAnswer(false, err));
 });
 
+var port = 3000;
+
+app.listen(port, function(){
+    console.log('Server is running at port: ',port);
+});
 /*var server = app.listen(port, function () {
     log.info("Express server listening on port: %s", server.address().port);
     log.info("Environment: %s", config.get("env"));

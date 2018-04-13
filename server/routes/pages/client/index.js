@@ -5,8 +5,8 @@ var express = require("express"),
     router = express.Router(),
     config = require("../../../config");
 
-router.get("/", function(req, res, next) {
-    res.render("client/mainfeed", {title: "Client Angular"});
+router.get("/", function(req, res, next) {	
+	res.render("client", {title: "Express"});
 });
 
 module.exports = router;

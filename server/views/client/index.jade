@@ -5,12 +5,12 @@ html.no-js(lang="")
 		meta(viewport="device-width" init-scale="1.0")
 
 		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
-				
+		link(rel="stylesheet" href="/assets/client/fonts/simple-line-icons-master/css/simple-line-icons.css")
 	body(ng-app="tbApp")
-		h1 I love you angular!
 		#page-wrapper(ng-view ng-cloak class="ngviewLoading")
 
 	script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js")
 	script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
 		
 	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js")
@@ -25,5 +25,7 @@ html.no-js(lang="")
 	script(src="/plugins/angular-treeview/angular-tree-control.js")
 	script(src="/plugins/ng-table/dist/ng-table.js")
 
+	script(src="/app/consts.js")
 	script(src="/app/app.js")
-	script(src="/app/controllers/mainfeed.js")
+	script(src="/app/controllers/signup.js")
+	script(src="/app/controllers/login.js")

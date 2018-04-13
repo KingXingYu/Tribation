@@ -4,7 +4,12 @@
     "env": "development",
     "instance": "Server_PC",
     "parallelProcessing": 5,
-    "domain": "",    
+    "domain": "http://localhost:3000",
+    "site": {
+        "title": "Tribation",
+        "officename": "Tribation Sport Co.",
+        "officeurl": "http://www.tribation.com/"
+        },  
     "db_adapter": "mysql",
     "cookie": {
         "secure": false

@@ -6,11 +6,11 @@
 
 var mysql = require("mysql");
 
-var database_name   = 'program_exhibition_dev';
+var database_name   = 'db_tribation';
 
 function getMySqlClient() {
     var mysqlClient = mysql.createConnection({
-        host: '192.168.1.35',
+        host: 'localhost',
         user: 'root',
         password: ''
     });
