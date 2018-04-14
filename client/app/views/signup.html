@@ -12,10 +12,10 @@
 	    	<div class="row">
 	    		<div class="col padding-lr-5">
 	    			<div class="form-group">
-			    		<input type="text" class="form-control" id="first-name" placeholder="First Name" required>
-					  	<div class="invalid-tooltip">
+			    		<input type="text" class="form-control" id="first-name" placeholder="First Name" ng-model="first_name" required>
+					  	<!-- <div class="invalid-tooltip">
 	        				please enter your First Name!
-	      				</div>
+	      				</div> -->
 					  	<span class="symbol-input100">
 							<i class="icon-user icons"></i>
 						</span>	
@@ -23,10 +23,10 @@
 	    		</div>
 	    		<div class="col padding-lr-5">
 	    			<div class="form-group">
-		    			<input type="text" class="form-control" id="last-name" placeholder="Last Name" required>
-					  	<div class="invalid-tooltip">
+		    			<input type="text" class="form-control" id="last-name" placeholder="Last Name" ng-model="last_name" required>
+					  	<!-- <div class="invalid-tooltip">
 	        				please enter your Last Name!
-	      				</div>
+	      				</div> -->
 					  	<span class="symbol-input100">
 							<i class="icon-user icons"></i>
 						</span>
@@ -36,10 +36,10 @@
 	    	<div class="row">
 	    		<div class="col padding-lr-5">
 			      	<div class="form-group">
-					  	<input type="text" class="form-control" id="email" placeholder="Email Adress" required>
-					  	<div class="invalid-tooltip">
+					  	<input type="text" class="form-control" id="email" placeholder="Email Adress" ng-model="email" required>
+					  	<!-- <div class="invalid-tooltip">
 	        				please enter your email address!
-	      				</div>
+	      				</div> -->
 					  	<span class="symbol-input100">
 							<i class="icon-envelope icons"></i>
 						</span>
@@ -50,10 +50,10 @@
 			<div class="row">
 	    		<div class="col padding-lr-5">
 	    			<div class="form-group">
-			    		<input type="password" class="form-control" id="password" placeholder="Password" required>
-					  	<div class="invalid-tooltip">
+			    		<input type="password" class="form-control" id="password" placeholder="Password" ng-model="password" required>
+					  	<!-- <div class="invalid-tooltip">
 	        				please enter your password!
-	      				</div>
+	      				</div> -->
 					  	<span class="symbol-input100">
 							<i class="icons icon-lock"></i>
 						</span>	
@@ -62,9 +62,9 @@
 	    		<div class="col padding-lr-5">
 	    			<div class="form-group">
 		    			<input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
-					  	<div class="invalid-tooltip">
+					  	<!-- <div class="invalid-tooltip">
 	        				please confirm password!
-	      				</div>
+	      				</div> -->
 					  	<span class="symbol-input100">
 							<i class="icons icon-lock"></i>
 						</span>
@@ -75,10 +75,10 @@
 	    	<div class="row">
 	    		<div class="col padding-lr-5">
 	    			<div class="form-group">
-			    		<input type="text" class="form-control" id="birthday" placeholder="Date of Birth" required>
-					  	<div class="invalid-tooltip">
+			    		<input type="date" class="form-control" id="birthday" placeholder="Date of Birth"  ng-model="birthday" required>
+					  	<!-- <div class="invalid-tooltip">
 	        				please enter your Birthday!
-	      				</div>
+	      				</div> -->
 					  	<span class="symbol-input100">
 							<i class="icons icon-calendar"></i>
 						</span>	
@@ -94,7 +94,7 @@
 	    	<div class="row">
 	    		<div class="col padding-lr-5">
 			    	<div class="form-group">
-					  	<input id="phone_number" class="form-control" type="tel" placeholder="phone number">
+					  	<input id="phone_number" class="form-control" type="number" placeholder="phone number" ng-model="telephone">
 					  	<span class="symbol-input100">
 							<span class="icons icon-phone"></span>
 						</span>
@@ -106,9 +106,9 @@
 	    		<div class="col padding-lr-5">
 	    			<div class="form-group">
 		    			<input type="text" class="form-control" id="city" placeholder="City" required>
-					  	<div class="invalid-tooltip">
+					  	<!-- <div class="invalid-tooltip">
 	        				please enter City!
-	      				</div>
+	      				</div> -->
 					  	<span class="symbol-input100">
 							<span class="icons icon-location-pin"></span>
 						</span>
@@ -141,7 +141,7 @@
 			</div>
 
 			<div class="form-group">
-			  <button type="submit" id="register-btn" class="btn-info">Register Now</button>
+			  <button type="submit" id="register-btn" class="btn-info" ng-click="signup()">Register Now</button>
 			</div>
 	    </form>
   	</div>

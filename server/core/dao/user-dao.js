@@ -1,12 +1,13 @@
 "use strict";
 
 var config = require("../../config");
-var tbl_user, tbl_temporary_email;
+var tbl_user, tbl_temporary_email, tbl_user_emails;
 var mysqlClientLib, mysqlClient;
 
 mysqlClientLib = require('../../libs/mysql-client');
 mysqlClient = mysqlClientLib.mysqlClient();
 tbl_user = 'tbl_user';
+tbl_user_emails = "tbl_user_emails";
 tbl_temporary_email = 'tbl_temporary_email';
     
 var log = require("../../libs/log")(module),
@@ -21,8 +22,8 @@ function addUser(user, callback) {
             user.password = hash;
             mysqlClient.query(
                 'INSERT INTO ' + tbl_user + ' ' +
-                'SET email = ?, password = ?',
-                [user.email, user.password],
+                'SET first_name = ?, last_name = ?, email = ?, password = ?, birthday = ?, telephone = ?, ip_address = ?, created = ?, token = ?',
+                [user.first_name, user.last_name, user.email, user.password, user.birthday, user.telephone, user.ip_address, user.created, user.token],
                 function(err, info) {
                     if (err) {
                         callback(err, null);
@@ -41,7 +42,7 @@ function getTemporaryEmail(callback) {
         function selectCb(err, results, fields) {
             if (err) {
                 callback(err, null);
-            } else {                
+            } else {
                 callback(null, results);
             }
         }
@@ -57,22 +58,17 @@ function getUserById(userId, callback) {
             } else {
                 if (results.length > 0) {
                     callback(null, findUser);
-                } else {
-                    var error = new Error(consts.USER_NOT_EXISTS);
-                    error.status = 422;
-                    callback(error, null);
+                } else {                    
+                    callback(err, null);
                 }
             }
         }
     );
 }
 
-function getUserByName(username, callback) {
-    if (username) {
-        username = username.toLowerCase();
-    }
+function getUserByEmail(email, callback) {    
     mysqlClient.query(
-        'SELECT * FROM ' + tbl_user + ' WHERE username="'+username+'"',
+        'SELECT * FROM ' + tbl_user + ' WHERE email="'+email+'"',
         function selectCb(err, results, fields) {
             if (err) {
                 callback(err, null);
@@ -80,8 +76,72 @@ function getUserByName(username, callback) {
                 if(results.length > 0){
                     callback(null, results[0]);
                 }else{
-                    callback({err: "User is Empty"}, null);
+                    callback("None", err);
                 }
+            }
+        }
+    );
+}
+
+function checkAlreadyEmail(email, callback) {
+    mysqlClient.query(
+        'SELECT * FROM ' + tbl_user_emails + ' WHERE email="'+email+'"',
+        function selectCb(err, results, fields) {
+            if (err) {
+                callback(err, null);
+            } else{
+                if(results.length > 0){
+                    callback(null, results[0]);
+                }else{
+                    callback("None", err);
+                }
+            }
+        }
+    );
+}
+
+function verifyToken(token, callback) {
+    mysqlClient.query(
+        'SELECT * FROM ' + tbl_user + ' WHERE token="'+token+'" AND email_status="pending"',
+        function selectCb(err, results, fields) {
+            if (err) {
+                callback(err, null);
+            } else{
+                if(results.length > 0){
+                    callback(null, results[0]);
+                }else{
+                    callback("None", err);
+                }
+            }
+        }
+    );
+}
+
+function updateEmailStatus(user_id, status, callback) {    
+    mysqlClient.query(
+        'UPDATE ' + tbl_user + ' ' +
+        'SET email_status = ? WHERE id = ?',
+        [status, user_id],
+        function(err, info) {
+            if (err) {
+                callback(err, null);
+            } else {
+                callback(null, info);
+            }
+        }
+    );
+}
+
+function updateUserType(user_id, type, callback) {    
+    mysqlClient.query(
+        'UPDATE ' + tbl_user + ' ' +
+        'SET user_type = ? WHERE id = ?',
+        [type, user_id],
+        function(err, info) {
+            if (err) {
+                callback(err, null);
+            } else {
+                callback(null, info);
             }
         }
     );
@@ -127,20 +187,6 @@ function updatePassword(user, password, callback) {
             }
         });
     });
-}
-
-function getAllUsers(callback) {    
-    var admin_name = 'admin';
-    mysqlClient.query(
-        'SELECT * FROM ' + tbl_user + ' WHERE username<>"'+admin_name+'"',
-        function selectCb(err, results, fields) {
-            if (err) {
-                callback(err, null);
-            } else {
-                callback(null, results);
-            }
-        }
-    );
 }
 
 function updateUserByID(user_id, user, callback) {    
@@ -191,29 +237,14 @@ function deleteUser(user_id, callback) {
     );
 }
 
-function getUserByID(user_id, callback) {    
-    mysqlClient.query(
-        'SELECT * FROM ' + tbl_user + ' WHERE _id="'+user_id+'"',
-        function selectCb(err, results, fields) {
-            if (err) {
-                callback(err, null);
-            } else {
-                if (results.length > 0) {
-                    callback(null, results[0]);
-                } else {
-                    callback({err : "No users!"}, null);
-                }
-            }
-        }
-    );
-}
-
-exports.getUserByEmail = getUserByName;
+exports.getUserByEmail = getUserByEmail;
+exports.checkAlreadyEmail = checkAlreadyEmail;
 exports.getTemporaryEmail = getTemporaryEmail;
+exports.verifyToken = verifyToken;
+exports.updateEmailStatus = updateEmailStatus;
+exports.updateUserType = updateUserType;
 exports.authenticate = authenticate;
-exports.getUserByID = getUserByID;
 exports.updatePassword = updatePassword;
-exports.getAllUsers = getAllUsers;
 exports.addUser = addUser;
 exports.updateUserByID = updateUserByID;
 exports.deleteUser = deleteUser;

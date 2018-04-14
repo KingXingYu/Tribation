@@ -20,12 +20,14 @@ body, .register-wrapper {
   align-items: center;
   position: relative;
   z-index: 1;
-  background-image: url("../images/background/bg_ls.jpg");
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+body {
+  background-image: url("../images/background/bg_ls.jpg"); }
+
 .register-wrapper {
-  max-width: 1400px;
+  min-width: 1400px;
   max-height: 660px; }
 
 .tribation-logo {

@@ -9,25 +9,19 @@
   		<div class = 'login-text'>Login Now</div>
 	    <form class="login-form needs-validation" novalidate>
 	      	<div class="form-group">
-			  	<input type="text" class="form-control" id="email" placeholder="EmailAdress" required>
-			  	<div class="invalid-tooltip">
-    				please enter your email address!
-  				</div>
+			  	<input type="text" class="form-control" id="email" placeholder="EmailAdress" required>			  	
 			  	<span class="symbol-input100">
 					<span class="icons icon-envelope"></span>
 				</span>
 			</div>
 			<div class="form-group">
 			  <input type="password" class="form-control" id="password" placeholder="Password" required>
-			   <div class="invalid-tooltip">
-      				Please enter password.
-    			</div>
-			  	<span class="symbol-input100">
+				<span class="symbol-input100">
 					<span class="icons icon-lock"></span>
 				</span>
 			</div>
 			<div class="form-group">
-			  <button type="submit" class="btn-info">Login Now</button>
+			  <button type="submit" class="btn-info" ng-click="login()">Login Now</button>
 			</div>
 			<p class="request_signup">Don't have an account? <a href="#!/signup">Sign Up</a></p>
 	    </form>

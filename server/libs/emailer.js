@@ -16,12 +16,12 @@ var emailTemplates = require('email-templates');
 
 
 var smtpOptions = {    
-	host: 'mail.tribation.com',    
-    port: 587,
+	host: consts.EMAIL_HOST.URL,    
+    port: consts.EMAIL_HOST.PORT2,
     secure: false,
     auth: {        
-        user: 'noreply@tribation.com',
-        pass: 'no_tribationR3ply!'
+        user: consts.EMAIL_HOST.USER2,
+        pass: consts.EMAIL_HOST.PASS2
     },
     tls: {
         rejectUnauthorized: false
@@ -56,7 +56,7 @@ function send_mail(mailOptions, content, callbackParams, callback) {
             }
         }
     ]
-    ,function (err, result) {
+    ,function (err, result) {       
     	transporter.sendMail(mailOptions, function(err, response) {
             if(callback) {
                 if(err) {
@@ -82,13 +82,10 @@ function sendActivationEmail(user_data, callback) {
         mailOptions.to = user_data.to;
         mailOptions.subject = "Activation Email";
         mailOptions.text = "Activate your profile";
-
-    var content = {
-        title: "Welcome to our Team-Project-Space!",
-        description: 'You have successfully signed up to Tribation site.<br/>' +
-                    'your name is:' + user_data.firstname + ' ' + user_data.lastname+'<br/><br/>' +
-                    '<a href="' + config.get("domain") + "/user/activate?activate_key=" + user_data.activate_key + '" style="color:#256188">Click here to activate your account</a>',
-    }
+        mailOptions.html = '<h3>Welcome to our Team-Project-Space!</h3>' +
+                           'your name is:' + user_data.firstname + ' ' + user_data.lastname+'<br/><br/>' +
+                           '<a href="' + config.get("domain") + "#!/user/activate?activate_key=" + user_data.activate_key + '" style="padding: 15px; background: green; color:white">Click here to activate your account</a>';
+    var content = {};
 
     send_mail(mailOptions, content, 'success', function (err, result) {
         if (err) {

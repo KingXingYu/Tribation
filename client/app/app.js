@@ -51,23 +51,9 @@ angular.module('tbApp', dependencies)
       templateUrl:'app/views/signup.html',
       controller:'signupController'
     }).
-    when('/products/:type_id?', {
-      templateUrl: 'app/views/products.html'
-    }).
-    when('/advertise/:id', {
-      templateUrl: 'app/views/advertise-products.html'
-    }).
-    when('/products/detail/:id', {
-      templateUrl: 'app/views/productdetail.html',
-      controller: 'productDetailController'
-    }).    
-    when('/offices/:id', {
-      templateUrl: 'app/views/officedetail.html',
-      controller: 'officeController'
-    }).
-    when('/mypage', {
-      templateUrl : 'app/views/mypage.html',
-      controller : 'mypageController'
+    when('/user/:activate?', {
+      templateUrl: 'app/views/activate.html',
+      controller: 'activateController'
     }).
     otherwise({
         redirectTo: '/'
