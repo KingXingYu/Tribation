@@ -1,0 +1,242 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.no-padding {
+  padding: 0px; }
+
+.pLeft5 {
+  padding-right: 5px;
+  padding-left: 5px; }
+.mTop10{ margin-top: 10px; }
+
+.txt-center {
+  text-align: center !important; }
+
+
+body, .wrapper {
+  font-family: "Myriad Pro";
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+body {
+  background-image: url("../../images/background/bg_ls.jpg"); }
+
+.wrapper {
+  min-width: 1400px;
+  max-height: 660px; }
+
+.tribation-logo {
+  position: absolute;
+  left: 100px;
+  top: 25px; }
+
+div.alert p {margin-bottom: 0;}
+
+.alert-fade.ng-hide {
+  opacity: 0;
+}
+
+.alert-fade.ng-hide-remove,
+.alert-fade.ng-hide-add {
+  display: block !important; /* or inline-block, as appropriate */
+}
+
+.alert-fade.ng-hide-remove {
+  transition: all linear 1000ms;
+}
+
+.alert-fade.ng-hide-add {
+  transition: all linear 500ms;
+}
+
+/*register form:border-round:30px margin-right:305px margin-top:193px, width:410px, h:310;*/
+.form-group {
+  margin-bottom: 10px !important; }
+
+.form {
+  position: relative;
+  border-radius: 14px;
+  z-index: 1;
+  background: #FFFFFF;  
+  margin-right: 100px;
+  margin-left: auto;
+  padding: 15px 35px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); }
+  .form.login {width: 425px;}
+  .form.signup {width: 515px;}
+.form input {
+  height: 42px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 10px 10px 10px 45px; }
+
+.form select {
+  height: 42px !important;
+  color: #495057 !important;
+  padding-left: 40px; }
+
+#register-btn {
+  outline: 0;
+  border: 0;
+  color: #FFFFFF;
+  font-size: 16px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin: 20px auto 0px auto;
+  width: 220px;
+  height: 44px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 3px; }
+
+/*.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}*/
+.wrapper_text {
+  font-size: 30px;
+  margin-bottom: 20px; }
+
+.site-comment {
+  color: #fff;
+  margin-left: 100px;
+  position: relative; }
+
+.main-comment-p {
+  font-size: 45px; }
+
+.sub-comment-p {
+  font-size: 20px; }
+
+.symbol-input100 {
+  font-size: 18px;
+  color: #999999;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  border-radius: 25px;
+  top: 12px;
+  left: 5px;
+  width: 100%;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  pointer-events: none;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s; }
+
+.form-group {
+  position: relative; }
+
+.request_register {
+  margin-left: auto;
+  margin-right: auto; }
+
+.country-select-btn {
+  height: 48px;
+  width: 100%; }
+
+.request_signup {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+
+/*# sourceMappingURL=register.css.map */
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+input#birthday {
+  height: 42px;
+  margin-bottom: 10px; }
+
+label#label {
+  font-size: 12px;
+  font-weight: bold; }
+
+textarea.ng-invalid {
+  border: 1px solid red;
+  border-left: 5px solid red; }
+
+textarea.ng-valid.ng-dirty {
+  border: 1px solid green;
+  border-left: 5px solid green; }
+
+select.ng-invalid {
+  border: 1px solid red;
+  border-left: 5px solid red; }
+
+select.ng-valid.ng-dirty {
+  border: 1px solid green;
+  border-left: 5px solid green; }
+
+input.ng-invalid {
+  border: 1px solid red;
+  border-left: 5px solid red; }
+
+input.ng-valid.ng-dirty {
+  border: 1px solid green;
+  border-left: 5px solid green; }
+
+p.msg {
+  margin-top: 8px;
+  color: red;
+  text-align: center; }
+
+.headname {
+  font-size: 15px; }
+
+a#login {
+  text-decoration: none; }
+
+a#login p {
+  margin-top: 15px; }
+
+div.options > label > input {
+  visibility: hidden; }
+
+div.options > label {
+  font-size: 16px;
+  display: inline-block;
+  margin: 0;
+  line-height: 28px;
+  height: 28px;
+  vertical-align: top;
+  margin-left: 10px;
+  margin-top: -13px;
+  color: #495057; }
+
+div.options > label > img {
+  display: inline-block;
+  padding: 0px;
+  height: 20px;
+  width: 20px;
+  background: none; }
+
+div.options > label > input:checked + img {
+  background: url(http://cdn1.iconfinder.com/data/icons/onebit/PNG/onebit_34.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 20px 20px; }
+
+/*# sourceMappingURL=register.css.map */

@@ -1,0 +1,165 @@
+<link rel="stylesheet" type="text/css" href="/assets/client/css/register.css">
+<link rel="stylesheet" type="text/css" href="/assets/client/css/select.css">
+<div class="register-wrapper">
+	<a href="#" class="tribation-logo"><img src="./assets/client/images/logo.png"></a>
+	<div class="site-comment">
+		<p class="main-comment-p">Welcome to the Biggest Athlete <br/> &amp; Sports Social Network in <br/>The World</p>
+		<p class="sub-comment-p">We are the best and biggest athlete and sports social network with 5  <br/>billion active users all around the world.</p>
+	</div>
+  	<div class="form">
+  		<div class = 'register-text'>Register Now</div>
+	    <form class="register-form needs-validation" novalidate>
+	    	<div class="row">
+	    		<div class="col pLeft5">
+	    			<div class="form-group">
+			    		<input type="text" class="form-control" id="first-name" placeholder="First Name" ng-model="first_name" required>
+					  	<!-- <div class="invalid-tooltip">
+	        				please enter your First Name!
+	      				</div> -->
+					  	<span class="symbol-input100">
+							<i class="icon-user icons"></i>
+						</span>	
+					</div>
+	    		</div>
+	    		<div class="col pLeft5">
+	    			<div class="form-group">
+		    			<input type="text" class="form-control" id="last-name" placeholder="Last Name" ng-model="last_name" required>
+					  	<!-- <div class="invalid-tooltip">
+	        				please enter your Last Name!
+	      				</div> -->
+					  	<span class="symbol-input100">
+							<i class="icon-user icons"></i>
+						</span>
+					</div>
+	    		</div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col pLeft5">
+			      	<div class="form-group">
+					  	<input type="text" class="form-control" id="email" placeholder="Email Adress" ng-model="email" required>
+					  	<!-- <div class="invalid-tooltip">
+	        				please enter your email address!
+	      				</div> -->
+					  	<span class="symbol-input100">
+							<i class="icon-envelope icons"></i>
+						</span>
+		    		</div>
+				</div>
+			</div>
+
+			<div class="row">
+	    		<div class="col pLeft5">
+	    			<div class="form-group">
+			    		<input type="password" class="form-control" id="password" placeholder="Password" ng-model="password" required>
+					  	<!-- <div class="invalid-tooltip">
+	        				please enter your password!
+	      				</div> -->
+					  	<span class="symbol-input100">
+							<i class="icons icon-lock"></i>
+						</span>	
+					</div>
+	    		</div>
+	    		<div class="col pLeft5">
+	    			<div class="form-group">
+		    			<input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
+					  	<!-- <div class="invalid-tooltip">
+	        				please confirm password!
+	      				</div> -->
+					  	<span class="symbol-input100">
+							<i class="icons icon-lock"></i>
+						</span>
+					</div>
+	    		</div>
+	    	</div>
+
+	    	<div class="row">
+	    		<div class="col pLeft5">
+	    			<div class="form-group">
+			    		<input type="text" class="form-control" id="birthday" placeholder="Date of Birth"  ng-model="birthday" required>
+					  	<!-- <div class="invalid-tooltip">
+	        				please enter your Birthday!
+	      				</div> -->
+					  	<span class="symbol-input100">
+							<i class="icons icon-calendar"></i>
+						</span>	
+					</div>
+	    		</div>
+	    		<div class="col pLeft5">
+	    			<div class="form-group">
+		    			
+					</div>
+	    		</div>
+	    	</div>
+
+	    	<div class="row">
+	    		<div class="col pLeft5">
+			    	<div class="form-group">
+					  	<input id="phone_number" class="form-control" type="number" placeholder="phone number" ng-model="telephone">
+					  	<span class="symbol-input100">
+							<span class="icons icon-phone"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+
+	    	<div class="row">
+	    		<div class="col pLeft5">
+	    			<div class="form-group">
+		    			<input type="text" class="form-control" id="city" placeholder="City" required>
+					  	<!-- <div class="invalid-tooltip">
+	        				please enter City!
+	      				</div> -->
+					  	<span class="symbol-input100">
+							<span class="icons icon-location-pin"></span>
+						</span>
+					</div>
+	    		</div>
+	    		<div class="col pLeft5">
+	    			<div class="form-group">
+						<select data-live-search="true" data-btn-class="country-select-btn" data-live-search-placeholder="Search">
+						        <option>option1</option>
+						        <option>option2</option>
+						        <option>option3</option>
+						        <option>option4</option>
+						        <option>option1</option>
+						        <option>option2</option>
+						        <option>option3</option>
+						        <option>option1</option>
+						        <option>option2</option>
+						        <option>option3</option>
+						        <option>option4</option>
+						</select>
+					</div>
+	    		</div>
+	    	</div>
+
+	    	<div class="row">
+	    		<div class="col pLeft5">
+					<div id = "g-recaptcha" class="g-recaptcha" data-sitekey="6Lcn8FIUAAAAAPYWvCdhnEqZf_phmkr0a0BRB5T4">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+			  <button type="submit" id="register-btn" class="btn-info" ng-click="signup()">Register Now</button>
+			</div>
+	    </form>
+  	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="/assets/client/js/select.js"></script>
+<script type="text/javascript">
+	function recaptchaCallback (e) {
+		var container = document.getElementById('g-recaptcha')
+		container.innerHTML = ''
+		var recaptcha = document.createElement('div')
+		grecaptcha.render(recaptcha, {
+			'sitekey': '6Lcn8FIUAAAAAPYWvCdhnEqZf_phmkr0a0BRB5T4'
+		})
+		container.appendChild(recaptcha)
+	}
+	$('select').extendSelect({popoverResize: true});
+</script>
+<script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/api2/v1522970272143/recaptcha__en.js" nonce=""></script>
+<script src='https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit' async defer></script>

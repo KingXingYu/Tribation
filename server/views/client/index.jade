@@ -6,6 +6,11 @@ html.no-js(lang="")
 
 		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
 		link(rel="stylesheet" href="/assets/client/fonts/simple-line-icons-master/css/simple-line-icons.css")
+
+		link(rel="stylesheet" href="/plugins/angularjs-datepicker/src/css/angular-datepicker.css")
+		link(rel="stylesheet" href="/plugins/country-selector/css/jquery-countryselector.css")
+		link(rel="stylesheet" href="/plugins/intl-tel-input-12.1.0/src/css/intlTelInput.css")
+
 	body(ng-app="tbApp")
 		#page-wrapper(ng-view ng-cloak class="ngviewLoading")
 
@@ -24,6 +29,12 @@ html.no-js(lang="")
 	script(src="/plugins/angular-moment/angular-moment.min.js")
 	script(src="/plugins/angular-treeview/angular-tree-control.js")
 	script(src="/plugins/ng-table/dist/ng-table.js")
+	script(src="/plugins/angularjs-datepicker/src/js/angular-datepicker.js")
+	script(src="/plugins/ng-country-select/dist/ng-country-select.js")
+	script(src="/plugins/country-selector/js/jquery.countrySelector.js")
+	script(src="/plugins/intl-tel-input-12.1.0/src/js/data.js")
+	script(src="/plugins/intl-tel-input-12.1.0/src/js/intlTelInput.js")
+	script(src="/plugins/angularjs-captcha/dist/angularjs-captcha.min.js")
 
 	script(src="/app/consts.js")
 	script(src="/app/app.js")

@@ -16,14 +16,14 @@ var log = require("../../libs/log")(module),
     bcrypt = require("bcryptjs"),
     consts = require("../../libs/consts");
 
-function addUser(user, callback) {    
+function registerUser(user, callback) {    
     bcrypt.genSalt(10, function(err, salt) {
         bcrypt.hash(user.password, salt, function (err, hash) {
             user.password = hash;
             mysqlClient.query(
                 'INSERT INTO ' + tbl_user + ' ' +
-                'SET first_name = ?, last_name = ?, email = ?, password = ?, birthday = ?, telephone = ?, ip_address = ?, created = ?, token = ?',
-                [user.first_name, user.last_name, user.email, user.password, user.birthday, user.telephone, user.ip_address, user.created, user.token],
+                'SET first_name = ?, last_name = ?, email = ?, password = ?, country_code = ?, city = ?, gender = ?, birthday = ?, telephone = ?, ip_address = ?, created = ?, token = ?',
+                [user.firstname, user.lastname, user.email, user.password, user.country, user.city, user.gender, user.birthday, user.telephone, user.ip_address, user.created, user.token],
                 function(err, info) {
                     if (err) {
                         callback(err, null);
@@ -34,6 +34,21 @@ function addUser(user, callback) {
             );
         });
     });
+};
+
+function addUserEmail(userInfo, callback) {    
+    mysqlClient.query(
+        'INSERT INTO ' + tbl_user_emails + ' ' +
+        'SET user_id = ?, email = ?',
+        [userInfo.user_id, userInfo.email],
+        function(err, info) {
+            if (err) {
+                callback(err, null);
+            } else {
+                callback(null, info);
+            }
+        }
+    );
 };
 
 function getTemporaryEmail(callback) {
@@ -148,21 +163,17 @@ function updateUserType(user_id, type, callback) {
 }
 
 function authenticate(data, callback) {    
-    getUserByName(data.username, function (err, findUser) {
+    getUserByEmail(data.email, function (err, findUser) {
         if (err) {
             callback(err, null);
         } else {
-            if (findUser) {
-                bcrypt.compare(data.password, findUser.password, function(err, res) {
-                    if (res == true) {
-                        callback(null, findUser);
-                    } else {
-                        callback(err, null);
-                    }
-                });
-            } else {
-                callback({err: "no user"}, null);
-            }
+            bcrypt.compare(data.password, findUser.password, function(err, res) {
+                if (res == true) {
+                    callback(null, findUser);
+                } else {
+                    callback(err, null);
+                }
+            });
         }
     });
 }
@@ -245,7 +256,8 @@ exports.updateEmailStatus = updateEmailStatus;
 exports.updateUserType = updateUserType;
 exports.authenticate = authenticate;
 exports.updatePassword = updatePassword;
-exports.addUser = addUser;
+exports.registerUser = registerUser;
+exports.addUserEmail = addUserEmail;
 exports.updateUserByID = updateUserByID;
 exports.deleteUser = deleteUser;
 exports.updateUserByIDWithoutPassword = updateUserByIDWithoutPassword;

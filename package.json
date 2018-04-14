@@ -6,6 +6,8 @@
     "start": "nodemon server"
   },
   "dependencies": {
+    "angularjs-captcha": "^1.3.3",
+    "angularjs-datepicker": "^2.1.23",
     "async": "^0.9.0",
     "bcryptjs": "^1.1.0",
     "body-parser": "^1.12.3",
@@ -23,6 +25,7 @@
     "http-server": "^0.9.0",
     "http2": "^3.3.2",
     "internal": "^1.0.8",
+    "iso-3166-country-codes-angular": "^1.2.1",
     "jade": "^1.9.2",
     "minimist": "^1.1.1",
     "moment": "^2.10.0",
@@ -33,6 +36,9 @@
     "multer": "^0.1.8",
     "mysql": "^2.15.0",
     "nconf": "^0.6.9",
+    "ng-country-flags": "^1.0.6",
+    "ng-country-select": "^0.1.4",
+    "ng-intl-tel-input": "^1.3.2",
     "nodemailer": "^4.6.4",
     "npm": "^5.2.0",
     "npm-check-updates": "^2.14.1",

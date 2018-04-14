@@ -60,14 +60,19 @@ function send_mail(mailOptions, content, callbackParams, callback) {
     	transporter.sendMail(mailOptions, function(err, response) {
             if(callback) {
                 if(err) {
+                    transporter.close();
                     callback(err, null);
                 } else {
+                    transporter.close();
                     callback(null, callbackParams);
                 }
             } else {
                 if (err) {
+                    transporter.close();
                     var fullErr = utils.errorResponse(err);
                     log.error(fullErr);
+                } else {
+                    transporter.close();
                 }
             }
         });

@@ -7,11 +7,8 @@ angular.module('tbApp.controllers')
     	var tokenKey = $routeParams.activate_key;
 
     	$http.post("/v1/api/verify_email", {token: tokenKey}).then(function (response){
-
-            setTimeout(function() {
-                location.href = "/";    
-            }, 5000);
-                        
+            setTimeout(function() { $("div.loader").remove(); $("div.alert").fadeIn("fast");}, 3500);
+            setTimeout(function() { location.href = "/"; }, 6000);
         }, function (response){
         	
         });

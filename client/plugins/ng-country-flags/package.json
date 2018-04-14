@@ -1,0 +1,63 @@
+{
+  "_from": "ng-country-flags",
+  "_id": "ng-country-flags@1.0.6",
+  "_inBundle": false,
+  "_integrity": "sha512-8ujnEoK3tY2N49QG2yRMGJyKNofqdK5Whbv1fTknrVIQ/VdKWZjt7/+r49CVaDNgDcSlafI9xQs+KxSt/p1iDA==",
+  "_location": "/ng-country-flags",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "ng-country-flags",
+    "name": "ng-country-flags",
+    "escapedName": "ng-country-flags",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ng-country-flags/-/ng-country-flags-1.0.6.tgz",
+  "_shasum": "2d380bf65dc7ab7ea6f43a362ca8105d1359a80b",
+  "_spec": "ng-country-flags",
+  "_where": "D:\\05_Working\\Web\\Project\\Node\\tribation",
+  "author": {
+    "name": "Oscar Yuen"
+  },
+  "bugs": {
+    "url": "https://github.com/OscarYuen/angular-countryflags-directive/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "angular": "1.5.8"
+  },
+  "deprecated": false,
+  "description": "AngularJS directive to embed country flags by using flag-icon-css library",
+  "devDependencies": {
+    "flag-icon-css": "2.4.0",
+    "grunt": "1.0.1",
+    "grunt-contrib-concat": "1.0.0",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-cssmin": "1.0.1",
+    "grunt-contrib-less": "1.4.0",
+    "grunt-contrib-uglify": "2.0.0"
+  },
+  "homepage": "https://github.com/OscarYuen/angular-countryflags-directive#readme",
+  "keywords": [
+    "countryflags",
+    "angular"
+  ],
+  "license": "MIT",
+  "main": "Gruntfile.js",
+  "name": "ng-country-flags",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OscarYuen/angular-countryflags-directive.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.6"
+}

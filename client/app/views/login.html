@@ -1,30 +1,46 @@
-<link rel="stylesheet" type="text/css" href="/assets/client/css/login.css">
-<div class="login-wrapper">
-	<a href="#" class="tribation-logo"><img src="assets/client/images/logo.png"></a>
+<link rel="stylesheet" type="text/css" href="assets/client/css/css/user.css">
+<div class="wrapper">
+	<a href="#" class="tribation-logo"><img src="./assets/client/images/logo.png"></a>
 	<div class="site-comment">
-		<p class="main-comment-p">Welcome to the Biggest Athlete <br/> &amp;Sports Social Network in <br/>The World</p>
+		<p class="main-comment-p">Welcome to the Biggest Athlete <br/> &amp; Sports Social Network in <br/>The World</p>
 		<p class="sub-comment-p">We are the best and biggest athlete and sports social network with 5  <br/>billion active users all around the world.</p>
 	</div>
-  	<div class="form">
-  		<div class = 'login-text'>Login Now</div>
-	    <form class="login-form needs-validation" novalidate>
-	      	<div class="form-group">
-			  	<input type="text" class="form-control" id="email" placeholder="EmailAdress" required>			  	
-			  	<span class="symbol-input100">
-					<span class="icons icon-envelope"></span>
-				</span>
+  	<div class="form login">		
+  		<div class = 'wrapper_text'>Login Now</div>
+  		<div class="alert {{alert.class}}" style="margin-top:18px;" ng-show="flResponse">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true" style="font-size:20px">×</span>
+			</button>
+			<strong>{{alert.type}}</strong> 
+			<p>{{alert.content}}<p>
+		</div>
+		<form class = "register-form" name="registerForm" novalidate>
+			<div class="row">
+				<div class="col pLeft5">
+					<div class="form-group">
+						<input type="email" class="form-control required" ng-model="user.email" name="email" placeholder="Email Address" autocomplete="off" required>
+						<p class="msg" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">Email Address is not valid</p>
+					</div>
+					<span class="symbol-input100">
+						<i class="icon-envelope icons"></i>
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col pLeft5">
+					<div class="form-group">
+						<input type="password" class="form-control required"  id="password" ng-model="user.password" placeholder="Password" name="password" required="required" ng-minlength="{{passwordLen}}"/>
+						<p class="msg" ng-show="registerForm.password.$dirty && registerForm.password.$error.minlength">must contain at least {{passwordLen}} chars</p>		
+					</div>
+					<span class="symbol-input100">
+						<i class="icons icon-lock"></i>
+					</span>
+				</div>
 			</div>
 			<div class="form-group">
-			  <input type="password" class="form-control" id="password" placeholder="Password" required>
-				<span class="symbol-input100">
-					<span class="icons icon-lock"></span>
-				</span>
+				<button type="submit" id="login-btn" class="btn btn-info mTop10" ng-click="login()">Login Now</button>
+				<p class="request_signup">Don't have an account? <a href="#!/signup">Sign Up</a></p>
 			</div>
-			<div class="form-group">
-			  <button type="submit" class="btn-info" ng-click="login()">Login Now</button>
-			</div>
-			<p class="request_signup">Don't have an account? <a href="#!/signup">Sign Up</a></p>
-	    </form>
+		</form>
   	</div>
 </div>
-<script type="text/javascript" src="assets/client/js/validate_field.js"></script>

@@ -13,8 +13,7 @@ angular.module('tbApp.elements', []);
 //models
 
 var dependencies = [
-	'btford.socket-io',
-	'ui.bootstrap',
+	'btford.socket-io',	
 	'angularMoment',
 	'ngTable',
 	'ngRoute',
@@ -24,7 +23,10 @@ var dependencies = [
 	'tbApp.directives',
 	'tbApp.services',
 	'tbApp.filters',
-  'tbApp.elements'
+  'tbApp.elements',
+  '720kb.datepicker',
+  'countrySelect',
+  'BotDetectCaptcha'
 ];
 
 angular.module('tbApp', dependencies)

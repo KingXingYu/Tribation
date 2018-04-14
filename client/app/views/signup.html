@@ -1,166 +1,148 @@
-<link rel="stylesheet" type="text/css" href="/assets/client/css/register.css">
-<link rel="stylesheet" type="text/css" href="/assets/client/css/select.css">
-<div class="register-wrapper">
+<link rel="stylesheet" type="text/css" href="assets/client/css/css/user.css">
+<div class="wrapper">
 	<a href="#" class="tribation-logo"><img src="./assets/client/images/logo.png"></a>
 	<div class="site-comment">
 		<p class="main-comment-p">Welcome to the Biggest Athlete <br/> &amp; Sports Social Network in <br/>The World</p>
 		<p class="sub-comment-p">We are the best and biggest athlete and sports social network with 5  <br/>billion active users all around the world.</p>
 	</div>
-  	<div class="form">
-  		<div class = 'register-text'>Register Now</div>
-	    <form class="register-form needs-validation" novalidate>
-	    	<div class="row">
-	    		<div class="col padding-lr-5">
-	    			<div class="form-group">
-			    		<input type="text" class="form-control" id="first-name" placeholder="First Name" ng-model="first_name" required>
-					  	<!-- <div class="invalid-tooltip">
-	        				please enter your First Name!
-	      				</div> -->
-					  	<span class="symbol-input100">
-							<i class="icon-user icons"></i>
-						</span>	
-					</div>
-	    		</div>
-	    		<div class="col padding-lr-5">
-	    			<div class="form-group">
-		    			<input type="text" class="form-control" id="last-name" placeholder="Last Name" ng-model="last_name" required>
-					  	<!-- <div class="invalid-tooltip">
-	        				please enter your Last Name!
-	      				</div> -->
-					  	<span class="symbol-input100">
-							<i class="icon-user icons"></i>
-						</span>
-					</div>
-	    		</div>
-	    	</div>
-	    	<div class="row">
-	    		<div class="col padding-lr-5">
-			      	<div class="form-group">
-					  	<input type="text" class="form-control" id="email" placeholder="Email Adress" ng-model="email" required>
-					  	<!-- <div class="invalid-tooltip">
-	        				please enter your email address!
-	      				</div> -->
-					  	<span class="symbol-input100">
-							<i class="icon-envelope icons"></i>
-						</span>
-		    		</div>
-				</div>
-			</div>
-
+  	<div class="form signup">		
+  		<div class = 'wrapper_text'>Register Now</div>
+  		<div class="alert {{alert.class}}" style="margin-top:18px;" ng-show="flResponse">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true" style="font-size:20px">×</span>
+			</button>
+			<strong>{{alert.type}}</strong> 
+			<p>{{alert.content}}<p>
+		</div>
+		<form class = "register-form" name="registerForm" novalidate>
 			<div class="row">
-	    		<div class="col padding-lr-5">
-	    			<div class="form-group">
-			    		<input type="password" class="form-control" id="password" placeholder="Password" ng-model="password" required>
-					  	<!-- <div class="invalid-tooltip">
-	        				please enter your password!
-	      				</div> -->
-					  	<span class="symbol-input100">
-							<i class="icons icon-lock"></i>
-						</span>	
+				<div class="col pLeft5">
+					<div class="form-group" >
+						<input type="text" class="form-control required" name="username" ng-model="user.firstname" placeholder="First Name" autocomplete="off" required />
 					</div>
+					<span class="symbol-input100">
+						<i class="icon-user icons"></i>
+					</span>	
+				</div>
+				<div class="col pLeft5">
+					<div class="form-group" >
+						<input type="text" class="form-control required" name="username" ng-model="user.lastname" placeholder="Last Name" autocomplete="off" required />
+					</div>
+					<span class="symbol-input100">
+						<i class="icon-user icons"></i>
+					</span>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="col pLeft5">
+					<div class="form-group">
+						<input type="email" class="form-control required" ng-model="user.email" name="email" placeholder="Email Address" autocomplete="off" required>
+						<p class="msg" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">Email Address is not valid</p>
+					</div>
+					<span class="symbol-input100">
+						<i class="icon-envelope icons"></i>
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col pLeft5">
+					<div class="form-group">
+						<input type="password" class="form-control required"  id="password" ng-model="user.password" placeholder="Password" name="password" required="required" ng-minlength="6"/>
+						<p class="msg" ng-show="registerForm.password.$dirty && registerForm.password.$error.minlength">must contain at least 6 chars</p>		
+					</div>
+					<span class="symbol-input100">
+						<i class="icons icon-lock"></i>
+					</span>
+				</div>
+				<div class="col pLeft5">
+					<div class="form-group">
+						<input type="password" class="form-control required"  id="confirm_password" name="confirm_password" ng-model="user.confirm_password" placeholder="Confirm password" ng-change="matchPassword()" required>
+						<p class="msg" ng-show="!matchPassFlag">Confirm password didn't match</p>
+					</div>
+					<span class="symbol-input100">
+						<i class="icons icon-lock"></i>
+					</span>
+				</div>
+			</div>
+			<div class="row">
+	    		<div class="col pLeft5">
+	    			<div class="form-group">
+			    		<datepicker date-format="yyyy-MM-dd" selector="form-control">
+							<div class="input-group">
+								<input class="form-control required" placeholder="Date of Birth" class="form-control" ng-model="user.birthday" id="birthday" required/>
+							</div>
+						</datepicker>
+					</div>
+					<span class="symbol-input100">
+						<i class="icons icon-calendar"></i>
+					</span>
 	    		</div>
-	    		<div class="col padding-lr-5">
-	    			<div class="form-group">
-		    			<input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
-					  	<!-- <div class="invalid-tooltip">
-	        				please confirm password!
-	      				</div> -->
-					  	<span class="symbol-input100">
-							<i class="icons icon-lock"></i>
-						</span>
-					</div>
+	    		<div class="col pLeft5">	    			
+	    			<div class="form-group options">
+	    				<label title="Male">
+							<input type="radio" ng-model="user.gender" value="male" checked /> Male
+							<img />
+						</label>
+						<label title="Female">
+							<input type="radio" ng-model="user.gender" value="female" /> Female
+							<img />
+						</label>
+	    			</div>
 	    		</div>
 	    	</div>
-
 	    	<div class="row">
-	    		<div class="col padding-lr-5">
-	    			<div class="form-group">
-			    		<input type="date" class="form-control" id="birthday" placeholder="Date of Birth"  ng-model="birthday" required>
-					  	<!-- <div class="invalid-tooltip">
-	        				please enter your Birthday!
-	      				</div> -->
-					  	<span class="symbol-input100">
-							<i class="icons icon-calendar"></i>
-						</span>	
+				<div class="col pLeft5">
+					<div class="form-group" >
+						<input type="text" class="form-control required" name="city" ng-model="user.city" placeholder="City" autocomplete="off" required />
 					</div>
-	    		</div>
-	    		<div class="col padding-lr-5">
-	    			<div class="form-group">
-		    			
+					<span class="symbol-input100">
+						<i class="icon-user icons"></i>
+					</span>	
+				</div>
+				<div class="col pLeft5">
+					<div class="form-group">
+						<country-select class="form-control required" name="country" validate-on="dirty" ng-model = "user.country" required-message="'Please select country.'" cs-required required>
+                    	</country-select>
+						<!-- <country-select ng-model="cont" placeholder="Country"></country-select> -->
+						<!-- <select value="ID" data-show-flag="true" data-code-mode="alpha2" data-role="country-selector" class="form-control"></select> -->
 					</div>
-	    		</div>
-	    	</div>
-
-	    	<div class="row">
-	    		<div class="col padding-lr-5">
-			    	<div class="form-group">
-					  	<input id="phone_number" class="form-control" type="number" placeholder="phone number" ng-model="telephone">
-					  	<span class="symbol-input100">
-							<span class="icons icon-phone"></span>
-						</span>
+					<span class="symbol-input100">
+						<i class="icons icon-flag"></i>
+					</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col pLeft5">
+					<div class="form-group">
+						<input type="tel" class="form-control" id="telephone" name="telephone" ng-model="user.telephone" placeholder="Telephone" />
 					</div>
 				</div>
 			</div>
-
-	    	<div class="row">
-	    		<div class="col padding-lr-5">
-	    			<div class="form-group">
-		    			<input type="text" class="form-control" id="city" placeholder="City" required>
-					  	<!-- <div class="invalid-tooltip">
-	        				please enter City!
-	      				</div> -->
-					  	<span class="symbol-input100">
-							<span class="icons icon-location-pin"></span>
-						</span>
-					</div>
-	    		</div>
-	    		<div class="col padding-lr-5">
-	    			<div class="form-group">
-						<select data-live-search="true" data-btn-class="country-select-btn" data-live-search-placeholder="Search">
-						        <option>option1</option>
-						        <option>option2</option>
-						        <option>option3</option>
-						        <option>option4</option>
-						        <option>option1</option>
-						        <option>option2</option>
-						        <option>option3</option>
-						        <option>option1</option>
-						        <option>option2</option>
-						        <option>option3</option>
-						        <option>option4</option>
-						</select>
-					</div>
-	    		</div>
-	    	</div>
-
-	    	<div class="row">
-	    		<div class="col padding-lr-5">
+			<div class="row">
+				<div class="col pLeft5">
 					<div id = "g-recaptcha" class="g-recaptcha" data-sitekey="6Lcn8FIUAAAAAPYWvCdhnEqZf_phmkr0a0BRB5T4">
 					</div>
 				</div>
 			</div>
-
 			<div class="form-group">
-			  <button type="submit" id="register-btn" class="btn-info" ng-click="signup()">Register Now</button>
+				<button type="submit" id="register-btn" class="btn-info" ng-click="signup()">Register Now</button>
+				<a href="/" id="login"><p>I already have an account</p></a>
 			</div>
-	    </form>
+		</form>
   	</div>
 </div>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-<script src="/assets/client/js/select.js"></script>
 <script type="text/javascript">
 	function recaptchaCallback (e) {
-		var container = document.getElementById('g-recaptcha')
-		container.innerHTML = ''
-		var recaptcha = document.createElement('div')
-		grecaptcha.render(recaptcha, {
-			'sitekey': '6Lcn8FIUAAAAAPYWvCdhnEqZf_phmkr0a0BRB5T4'
-		})
+		var container = document.getElementById('g-recaptcha');
+		container.innerHTML = '';
+		var recaptcha = document.createElement('div');
+		grecaptcha.render(recaptcha, { 'sitekey': '6Lcn8FIUAAAAAPYWvCdhnEqZf_phmkr0a0BRB5T4' });
 		container.appendChild(recaptcha)
-	}
-	$('select').extendSelect({popoverResize: true});
+	}		
 </script>
 <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/api2/v1522970272143/recaptcha__en.js" nonce=""></script>
 <script src='https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit' async defer></script>
-<script type="text/javascript" src="assets/client/js/validate_field.js"></script>
