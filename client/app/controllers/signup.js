@@ -32,6 +32,11 @@ angular.module('tbApp.controllers')
                     $(this).removeClass('ng-invalid');
                 })                
             }, 10);
+            $(".g-recaptcha").hide();
+            setTimeout(function() {
+                $(".g-recaptcha>div>div").css({'margin' : '0 auto'});
+                $(".g-recaptcha").show();
+            }, 1000);
         }
         $scope.init();
 
@@ -41,11 +46,30 @@ angular.module('tbApp.controllers')
                 $scope.matchPassFlag = true;
             } else {
                 $scope.matchPassFlag = false;
-            }         
-        }       
+            }
+        }
+
+        function onSuccess() {
+            var responseCaptcha = grecaptcha.getResponse();
+            if(responseCaptcha.length == 0) {  //reCaptcha not verified
+                $("p#captcha").show();
+            } else { // reCaptcah verified
+                $("p#captcha").hide();
+            }
+        }
 
     	$scope.signup = function() {
 
+            var flCaptcha = true;
+            var responseCaptcha = grecaptcha.getResponse();
+            if(responseCaptcha.length == 0) {  //reCaptcha not verified
+                $("p#captcha").show();
+                flCaptcha = false;
+            } else { // reCaptcah verified
+                $("p#captcha").hide();
+                flCaptcha = true;
+            }
+    
             var canSubmit = true;
             var flVal = [];
             var flPassword = false;
@@ -73,8 +97,8 @@ angular.module('tbApp.controllers')
                     canSubmit = false;
                 }
             }
-            
-            if(canSubmit == true && flPassword == true) {
+
+            if(canSubmit == true && flPassword == true && flCaptcha == true) {
                 $http.post("/v1/api/signup", $scope.user).then(function (response){
                     if(response.data.success == 0) {
                         $scope.alert.type = "Error!"

@@ -33,13 +33,14 @@ angular.module('tbApp.controllers')
             var flVal = [];
             var flPassword = false;
             $("input.required").each(function(e) {
-                if($(this).val() == "") {
-                    $(this).addClass('ng-invalid');
-                    flVal.push(false);
-                } else {
-                    flVal.push(true);
-                }
-            });            
+                if($(this).val() == "") { $(this).addClass('ng-invalid'); }
+            });
+
+            $("input.required").each(function(e) {
+                if($(this).hasClass('ng-invalid')) { flVal.push(false); } 
+                else { flVal.push(true); }
+            });
+
             if($("#password").val().length < Number($scope.passwordLen - 1)) { flPassword = false;}
             else { flPassword = true; }
 

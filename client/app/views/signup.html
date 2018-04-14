@@ -48,7 +48,7 @@
 				<div class="col pLeft5">
 					<div class="form-group">
 						<input type="password" class="form-control required"  id="password" ng-model="user.password" placeholder="Password" name="password" required="required" ng-minlength="6"/>
-						<p class="msg" ng-show="registerForm.password.$dirty && registerForm.password.$error.minlength">must contain at least 6 chars</p>		
+						<p class="msg" ng-show="registerForm.password.$dirty && registerForm.password.$error.minlength">must contain at least 6 chars</p>
 					</div>
 					<span class="symbol-input100">
 						<i class="icons icon-lock"></i>
@@ -77,8 +77,21 @@
 						<i class="icons icon-calendar"></i>
 					</span>
 	    		</div>
-	    		<div class="col pLeft5">	    			
-	    			<div class="form-group options">
+	    		<div class="col pLeft5">
+	    			<div class="">	    				
+	    				<ul class="donate-now">
+							<li>
+							    <input type="radio" id="male" ng-model="user.gender" value="male" checked />
+							    <label for="male">Male</label>
+							</li>
+							<li>
+							    <input type="radio" id="female" ng-model="user.gender" value="female"/>
+							    <label for="female">Female</label>
+							</li>
+							
+							</ul>
+	    			</div>
+	    			<!-- <div class="form-group options">
 	    				<label title="Male">
 							<input type="radio" ng-model="user.gender" value="male" checked /> Male
 							<img />
@@ -87,7 +100,7 @@
 							<input type="radio" ng-model="user.gender" value="female" /> Female
 							<img />
 						</label>
-	    			</div>
+	    			</div> -->
 	    		</div>
 	    	</div>
 	    	<div class="row">
@@ -103,8 +116,6 @@
 					<div class="form-group">
 						<country-select class="form-control required" name="country" validate-on="dirty" ng-model = "user.country" required-message="'Please select country.'" cs-required required>
                     	</country-select>
-						<!-- <country-select ng-model="cont" placeholder="Country"></country-select> -->
-						<!-- <select value="ID" data-show-flag="true" data-code-mode="alpha2" data-role="country-selector" class="form-control"></select> -->
 					</div>
 					<span class="symbol-input100">
 						<i class="icons icon-flag"></i>
@@ -120,8 +131,9 @@
 			</div>
 			<div class="row">
 				<div class="col pLeft5">
-					<div id = "g-recaptcha" class="g-recaptcha" data-sitekey="6Lcn8FIUAAAAAPYWvCdhnEqZf_phmkr0a0BRB5T4">
+					<div id = "g-recaptcha" class="g-recaptcha" data-sitekey="6Lcn8FIUAAAAAPYWvCdhnEqZf_phmkr0a0BRB5T4" data-callback="onSuccess()">
 					</div>
+					<p id="captcha" class="msg" style="display: none;">must verify captcha</p>
 				</div>
 			</div>
 			<div class="form-group">
