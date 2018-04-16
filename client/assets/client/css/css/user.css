@@ -12,6 +12,9 @@
 .txt-center {
   text-align: center !important; }
 
+body {
+  background-image: url("../../images/background/bg_ls.jpg"); }
+
 body, .wrapper {
   font-family: "Myriad Pro";
   width: 100%;
@@ -28,9 +31,6 @@ body, .wrapper {
   z-index: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
-
-body {
-  background-image: url("../../images/background/bg_ls.jpg"); }
 
 .wrapper {
   min-width: 1400px;
@@ -208,6 +208,15 @@ p.msg {
 p#captcha.msg {
   margin-bottom: 0px;
   display: none; }
+
+.justify-content-around {
+  -ms-flex-pack: distribute !important;
+  justify-content: space-around !important; }
+
+.d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
 
 .headname {
   font-size: 15px; }

@@ -57,9 +57,10 @@ angular.module('tbApp', dependencies)
       templateUrl: 'app/views/activate.html',
       controller: 'activateController'
     }).
-    otherwise({
-        redirectTo: '/'
-    });
+    when('/message',{
+      templateUrl:'app/views/message.html',
+      controller:'messageController'
+    })
 }])
 
 .run(function ($rootScope) {
