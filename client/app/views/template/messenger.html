@@ -1,0 +1,137 @@
+<div class="row ng-scope messenger-container" data-ng-controller="messengerController">
+    <div class="col-md-4 col-xs-4 col-sm-4">        
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+        		<div class="col-xs-3 col-sm-3">
+        			<div class="actions">
+	                    <a class="btn btn-circle btn-icon-only btn-default" href="#">
+	                        <i class="icon-settings messenger-action-icon-left messenger-action-icon font-green-sharp"></i>
+	                    </a>
+	                </div>
+        		</div>
+        		<div class="col-xs-6 col-sm-6 text-center">
+        			<div class="caption">
+	                    <span class="caption-subject bold uppercase">Messenger</span>
+	                    <span class="caption-helper hide"></span>
+            		</div>
+        		</div>
+        		<div class="col-xs-3 col-sm-3">
+        			<div class="actions">
+	                    <a class="btn btn-circle btn-icon-only btn-default messenger-action-icon messenger-action-icon-right" href="#">
+	                        <i class="icons icon-note font-green-sharp"></i>
+	                    </a>
+	                </div>
+        		</div>
+            </div>
+            <div class="contact-search-form-dhv">
+                <form class="search-form open" action="#" method="GET">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." name="query" autocomplete="none">
+                        <span class="input-group-btn">
+                            <a href="javascript:;" class="btn submit">
+                                <i class="icon-magnifier"></i>
+                            </a>
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="contact-list-dhv scroller">
+                <div class="contact-list-of-messenger" ng-repeat = "user in registerUsers" >
+                    <div class="contact-user-info">
+                        <div class="col-xs-3 col-no-padding ">
+                            <img class="contact-user-info-img img-circle" src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_09.jpg"/>
+                        </div>
+                        <div class="col-xs-6 col-no-padding">
+                            <div class="name-and-msg">
+                                <div>{{user.first_name}}</div>
+                                <div>{{user.last_name}}</div>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 col-no-padding msg-in-date">
+                            {{user.created}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: ACCORDION DEMO -->
+    </div>
+    <div class="col-md-8 col-xs-8 col-sm-8">
+        <!-- BEGIN: ACCORDION DEMO -->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+        		<div class="col-xs-3 col-sm-4"></div>
+        		<div class="col-xs-6 col-sm-4 text-center">
+        			<div class="caption">
+	                    <span class="caption-subject bold uppercase">{{userinfo.name}}</span>
+	                    <span class="caption-helper hide"></span>
+            		</div>
+        		</div>
+        		<div class="col-xs-3 col-sm-4">
+        			<div class="chat-menu-dhv">
+						<ul class="nav navbar-nav pull-right">
+							<li>
+								<a class="btn btn-circle btn-icon-only btn-default font-green-sharp">
+									<i class="icons icon-phone font-green-sharp"></i>
+								</a>
+							</li>
+							<li>
+								<a class="btn btn-circle btn-icon-only btn-default font-green-sharp">
+									<i class="icons icon-camrecorder font-green-sharp"></i>
+								</a>
+							</li>
+							<li>
+								<a class="btn btn-circle btn-icon-only btn-default font-green-sharp">
+									<i class="icons icon-info font-green-sharp"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+            	</div>
+            </div>            
+            <div class="messenger-chat-history ">
+                <div class="chat-history-container scroller" id = "chat-history-scroller" >
+                    <!-- <div class = "message-list-dhv {{msg.type}}" ng-repeat = "msg in messageBox">
+                        <div class="message-user-photo">
+                            <img src="{{msg.userinfo.imgurl}}" class="img-circle chat-user-info-img">
+                        </div>
+                        <div class="message-content">
+                            <span class="arrow"></span>
+                            <div ng-bind-html = "msg.content | unsafe" class="content"></div>
+                            <div class="date-time"><i class="icons icon-clock"></i><span>{{msg.date}}</span></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="messenger-chat-inputbox">
+                <div class="col-md-9 col-xs-9">
+                    <div class="col-md-9 col-xs-9">
+                        <textarea id = "messege-input-box" col = "1" placeholder="Type a message..." ng-keypress = "keypress($event)"></textarea>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <button class="btn blue btn-send-msg" ng-click = "sendmessage()">Send</button>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-3">
+                    <div class="chat-more-action-group">
+                        <ul class="nav navbar-nav pull-right">
+                            <li>
+                                <a class="btn btn-circle btn-icon-only btn-default font-green-sharp messenger-action-icon">
+                                    <i class="icons icon-emotsmile"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn btn-circle btn-icon-only btn-default font-green-sharp messenger-action-icon">
+                                    <i class="icons icon-paper-clip"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

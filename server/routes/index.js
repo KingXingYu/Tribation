@@ -9,9 +9,9 @@ var clientPageRouter = require("./pages/client"),
 
 function register(app) {
 
-	app.get("/admin", adminPageRouter);
+	app.use("/admin", adminPageRouter);
 
-	app.get("/", clientPageRouter);
+	app.use("/", clientPageRouter);
 	app.use("/" + config.get("api:version") + "/api", clientAPIRouter);	
 }
 

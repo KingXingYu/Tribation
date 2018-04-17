@@ -6,6 +6,7 @@
     "start": "nodemon server"
   },
   "dependencies": {
+    "angular-cookies": "^1.6.9",
     "angularjs-captcha": "^1.3.3",
     "angularjs-datepicker": "^2.1.23",
     "async": "^0.9.0",

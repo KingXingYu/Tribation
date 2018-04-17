@@ -91,7 +91,8 @@ var sessionParameters = session({
         path: "/",
         domain: utils.isDevelopmentEnv() ? null : config.get("session:cookieDomain"),
         httpOnly: true,
-        secure: config.get("cookie:secure")
+        secure: config.get("cookie:secure"),
+        maxAge:600000000
     }
 });
 app.use(sessionParameters);

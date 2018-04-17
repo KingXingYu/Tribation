@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('tbApp.controllers')
-  .controller('loginController', ['$rootScope', '$scope', '$timeout', '$location', '$http',
-    function ($rootScope, $scope, $timeout, $location, $http) {
+  .controller('loginController', ['$rootScope', '$scope', '$timeout', '$location', '$http', '$cookies',
+    function ($rootScope, $scope, $timeout, $location, $http, $cookies) {
     	
         $scope.user = {
             email: '',
@@ -55,17 +55,17 @@ angular.module('tbApp.controllers')
                     if(response.data.success == 0) {
                         $scope.alert.type = "Error!"
                         $scope.alert.class = "alert-danger";
+                        $scope.alert.content = response.data.message;
+                        $scope.flResponse = true;
+                        $("div.alert").fadeIn();
+                        setTimeout(function() {
+                            $("div.alert").fadeOut("slow");
+                            $scope.flResponse = false;
+                        }, 2500);
+                    } else if(response.data.success == 1) {
+                        $cookies.put('userInfo', JSON.stringify(response.data.message));
+                        location.href = '#!/main';
                     }
-                    $scope.alert.content = response.data.message;
-                    $scope.flResponse = true;
-                    $("div.alert").fadeIn();
-                    setTimeout(function() {
-                        $("div.alert").fadeOut("slow");
-                        $scope.flResponse = false;
-                        if(response.data.success == 1) {
-                            alert("OK");
-                        }
-                    }, 2500);
                 }, function (response){
 
                 });

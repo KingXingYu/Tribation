@@ -18,6 +18,7 @@ var dependencies = [
 	'ngTable',
 	'ngRoute',
 	'ngAnimate',
+  'ngCookies',
   'treeControl',
 	'tbApp.controllers',
 	'tbApp.directives',
@@ -57,9 +58,9 @@ angular.module('tbApp', dependencies)
       templateUrl: 'app/views/activate.html',
       controller: 'activateController'
     }).
-    when('/message',{
-      templateUrl:'app/views/message.html',
-      controller:'messageController'
+    when('/main',{
+      templateUrl:'app/views/main.html',
+      controller: 'mainController'
     })
 }])
 

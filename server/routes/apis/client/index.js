@@ -19,7 +19,7 @@ router.post("/signup", function(req, res, next) {
 	info.created = moment.getCurrentDate();
 	info.token = func.makeVeritfyToken();
 
-	userDAO.getTemporaryEmail(function(err, emailList) {
+	userDAO.getTemporaryEmail(function(err, emailList) {		
 		if(checkTemporaryEmail(info.email, emailList)) {
 			return utils.failedResponse(consts.MESSAGE.SIGNUP.TEMPORARY_EMAIL, res, next);
 		} else {
@@ -97,13 +97,32 @@ router.post("/login", function(req, res, next) {
 			req.session.user = {
 				loginuser: suc
 			}
-			req.session.save();						
+			req.session.save();			
 			return utils.successResponse(suc, res, next);
 		}else{
 			return utils.failedResponse(consts.MESSAGE.LOGIN.FAIL, res, next);
 		}
 	})
-	
+});
+
+router.post("/getAllUser", function(req, res, next) {
+	var loginUser = req.body.loginUser;	
+	userDAO.getAllUsers(loginUser, function(err, suc) {
+		if(err) {
+			console.log("Erorr = ", err);
+		} else {
+			return utils.successResponse(suc, res, next);
+		}
+	});
+});
+
+router.post("/getLoginUser", function(req, res, next) {
+	console.log("Val = ", req.session);
+	if( typeof req.session.user === "undefined") {
+		return utils.failedResponse("No User", res, next);
+	} else {
+		return utils.successResponse(req.session.user.loginuser, res, next);
+	}	
 });
 
 function checkTemporaryEmail(email, temporaryEmailList) {

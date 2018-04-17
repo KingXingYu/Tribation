@@ -98,6 +98,19 @@ function getUserByEmail(email, callback) {
     );
 }
 
+function getAllUsers(loginUser, callback) {    
+    mysqlClient.query(
+        'SELECT * FROM ' + tbl_user + ' WHERE id!="'+loginUser.id+'"',
+        function selectCb(err, results, fields) {
+            if (err) {
+                callback(err, null);
+            } else{
+                callback(null, results);
+            }
+        }
+    );
+}
+
 function checkAlreadyEmail(email, callback) {
     mysqlClient.query(
         'SELECT * FROM ' + tbl_user_emails + ' WHERE email="'+email+'"',
@@ -249,6 +262,7 @@ function deleteUser(user_id, callback) {
 }
 
 exports.getUserByEmail = getUserByEmail;
+exports.getAllUsers = getAllUsers;
 exports.checkAlreadyEmail = checkAlreadyEmail;
 exports.getTemporaryEmail = getTemporaryEmail;
 exports.verifyToken = verifyToken;

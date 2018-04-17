@@ -1,0 +1,124 @@
+
+
+
+//top bar
+$page-header-navbar-height : 88px;
+//logo
+$page-header-logo-width : 185px;
+$logo-padding-left : 100px;
+$page-header-logo-padding : 0 $logo-padding-left 0 $logo-padding-left;
+
+//search-form
+$page-header-searchform-height : 41px;
+$page-header-searchform-width : 30%; 
+$page-header-search-form-topmargin : ( $page-header-navbar-height - $page-header-searchform-height ) / 2;
+
+//badge position
+$badge-right:4px;
+//dropdown top-menu
+$page-header-dropdonw-menu-margin-top : 15px;
+
+body {
+	font-family:'Myirad Pro';
+	background-color:#fff;
+}
+.page-header.navbar {
+	background-color: #002387;
+	height: $page-header-navbar-height;
+	min-height: $page-header-navbar-height;
+	box-shadow: 0px 0 15px 0;
+	min-width:1200px;
+}
+.page-header.navbar .search-form.open {
+	width: $page-header-searchform-width;
+	height: $page-header-searchform-height;
+	background-color:#fff;
+}
+
+.page-header.navbar .search-form .input-group .input-group-btn .btn.submit>i {
+	font-size: 24px;
+}
+
+.page-header.navbar .search-form .input-group input{
+	font-size: 18px !important;
+}
+
+.page-header.navbar .search-form .input-group .form-control {
+	height: $page-header-searchform-height;
+}
+.page-header.navbar .search-form .input-group .input-group-btn {
+	height: $page-header-searchform-height;	
+}
+.page-header.navbar .page-logo {
+	height:$page-header-navbar-height;
+	width:$page-header-logo-width + 2 * $logo-padding-left;
+	padding:$page-header-logo-padding;
+
+}
+.page-header.navbar .page-logo img{
+	width: $page-header-logo-width;
+}
+.page-header.navbar .search-form {
+	margin-top:$page-header-search-form-topmargin;
+}
+.top-menu {
+	margin-top:$page-header-search-form-topmargin !important;	
+	margin-right:$logo-padding-left !important;
+}
+.page-header.navbar .top-menu .navbar-nav > li.dropdown > .dropdown-toggle > .badge {
+	right:$badge-right;
+}
+
+.page-header.navbar .top-menu .navbar-nav>li.pending .dropdown-toggle>i,
+.page-header.navbar .top-menu .navbar-nav li.show .dropdown-toggle i {
+	color:#fff !important;
+}
+
+.top-menu .dropdown-user .dropdown-toggle i,
+.top-menu .dropdown-language .dropdown-toggle i{
+	color:#fff !important;
+}
+
+.page-header.navbar .top-menu .navbar-nav>li.dropdown .dropdown-toggle>i,
+.page-header.navbar .top-menu .navbar-nav li.dropdown .dropdown-toggle:hover i,
+.page-header.navbar .top-menu .navbar-nav li.dropdown .dropdown-toggle:visited i {
+	color:#00134b;
+}
+
+
+
+.page-header.navbar .top-menu .navbar-nav li.dropdown .dropdown-toggle:hover, 
+.page-header.navbar .top-menu .navbar-nav li.dropdown.show .dropdown-toggle{
+	background-color: transparent;
+	color:#000;
+}
+
+.page-header.navbar .top-menu .navbar-nav li.dropdown .dropdown-toggle i {
+	font-size:24px;
+}
+.under-arrow-shape {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #fff;
+    margin-left:10px !important;
+}
+.dropdown-user>.dropdown-toggle {
+	margin: 10px 10px 10px 0px !important;
+    padding: 5px 5px 5px 25px !important;
+}
+
+.page-header.navbar .top-menu .navbar-nav > li.dropdown .dropdown-menu {
+	margin-top:$page-header-dropdonw-menu-margin-top;
+}
+
+.item-divider {
+	display:block;
+	width:1px;
+	height:$page-header-searchform-height * 0.5;
+	background-color:#1e43ad;
+	float: left;
+    margin-top: 15px;
+}
+.page-content-wrapper {
+	min-width:1200px;
+}

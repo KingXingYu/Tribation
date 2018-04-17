@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/client/fonts/simple-line-icons-master/css/simple-line-icons.css">
+<link href="/assets/client/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/client/css/css/main/components-rounded.css" id="style_components" rel="stylesheet" type="text/css" />
+<link href="/assets/client/css/css/main/layout.css" rel="stylesheet" type="text/css" />
+<link href="/assets/client/css/css/main/custom.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="/assets/client/css/css/message.css">
+
+<div ng-spinner-bar class="page-spinner-bar">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>
+    
+<div data-ng-include="'app/views/template/header.html'" data-ng-controller="headerController" class="page-header navbar navbar-fixed-top"> </div>
+<div class="clearfix"></div>
+<div class="page-container">
+    <div class="page-content-wrapper">
+        <div data-ng-include="'app/views/template/messenger.html'" data-ng-controller="messengerController"> </div>
+    </div>
+</div>

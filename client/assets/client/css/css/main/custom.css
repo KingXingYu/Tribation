@@ -1,0 +1,92 @@
+body {
+  font-family: 'Myirad Pro';
+  background-color: #fff; }
+
+.page-header.navbar {
+  background-color: #002387;
+  height: 88px;
+  min-height: 88px;
+  box-shadow: 0px 0 15px 0;
+  min-width: 1200px; }
+
+.page-header.navbar .search-form.open {
+  width: 30%;
+  height: 41px;
+  background-color: #fff; }
+
+.page-header.navbar .search-form .input-group .input-group-btn .btn.submit > i {
+  font-size: 24px; }
+
+.page-header.navbar .search-form .input-group input {
+  font-size: 18px !important; }
+
+.page-header.navbar .search-form .input-group .form-control {
+  height: 41px; }
+
+.page-header.navbar .search-form .input-group .input-group-btn {
+  height: 41px; }
+
+.page-header.navbar .page-logo {
+  height: 88px;
+  width: 385px;
+  padding: 0 100px 0 100px; }
+
+.page-header.navbar .page-logo img {
+  width: 185px; }
+
+.page-header.navbar .search-form {
+  margin-top: 23.5px; }
+
+.top-menu {
+  margin-top: 23.5px !important;
+  margin-right: 100px !important; }
+
+.page-header.navbar .top-menu .navbar-nav > li.dropdown > .dropdown-toggle > .badge {
+  right: 4px; }
+
+.page-header.navbar .top-menu .navbar-nav > li.pending .dropdown-toggle > i,
+.page-header.navbar .top-menu .navbar-nav li.show .dropdown-toggle i {
+  color: #fff !important; }
+
+.top-menu .dropdown-user .dropdown-toggle i,
+.top-menu .dropdown-language .dropdown-toggle i {
+  color: #fff !important; }
+
+.page-header.navbar .top-menu .navbar-nav > li.dropdown .dropdown-toggle > i,
+.page-header.navbar .top-menu .navbar-nav li.dropdown .dropdown-toggle:hover i,
+.page-header.navbar .top-menu .navbar-nav li.dropdown .dropdown-toggle:visited i {
+  color: #00134b; }
+
+.page-header.navbar .top-menu .navbar-nav li.dropdown .dropdown-toggle:hover,
+.page-header.navbar .top-menu .navbar-nav li.dropdown.show .dropdown-toggle {
+  background-color: transparent;
+  color: #000; }
+
+.page-header.navbar .top-menu .navbar-nav li.dropdown .dropdown-toggle i {
+  font-size: 24px; }
+
+.under-arrow-shape {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #fff;
+  margin-left: 10px !important; }
+
+.dropdown-user > .dropdown-toggle {
+  margin: 10px 10px 10px 0px !important;
+  padding: 5px 5px 5px 25px !important; }
+
+.page-header.navbar .top-menu .navbar-nav > li.dropdown .dropdown-menu {
+  margin-top: 15px; }
+
+.item-divider {
+  display: block;
+  width: 1px;
+  height: 20.5px;
+  background-color: #1e43ad;
+  float: left;
+  margin-top: 15px; }
+
+.page-content-wrapper {
+  min-width: 1200px; }
+
+/*# sourceMappingURL=custom.css.map */
