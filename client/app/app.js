@@ -12,6 +12,7 @@ angular.module('tbApp.filters', []);
 angular.module('tbApp.elements', []);
 //models
 
+
 var dependencies = [
 	'btford.socket-io',	
 	'angularMoment',
