@@ -116,13 +116,12 @@ router.post("/getAllUser", function(req, res, next) {
 	});
 });
 
-router.post("/getLoginUser", function(req, res, next) {
-	console.log("Val = ", req.session);
+router.post("/isLogged", function(req, res, next) {
 	if( typeof req.session.user === "undefined") {
 		return utils.failedResponse("No User", res, next);
 	} else {
 		return utils.successResponse(req.session.user.loginuser, res, next);
-	}	
+	}
 });
 
 function checkTemporaryEmail(email, temporaryEmailList) {

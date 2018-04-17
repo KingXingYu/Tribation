@@ -40,7 +40,6 @@ angular.module('tbApp', dependencies)
 })
 
 .constant('firstLoadEventList', ['connected'])
-
 .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   $locationProvider
     .html5Mode(false)
